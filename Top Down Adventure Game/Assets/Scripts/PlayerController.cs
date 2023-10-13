@@ -9,11 +9,18 @@ public class PlayerController : MonoBehaviour
     public bool hasKey = false;
     public GameObject key;
 
+    public static PlayerController instance; //creating an object of the class to be findable 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(instance != null) //check if instance is in the scene 
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        GameObject.DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -61,6 +68,12 @@ public class PlayerController : MonoBehaviour
             key.SetActive(false);  //key disappears
 
             hasKey = true;
+        }
+
+        if (collision.gameObject.tag.Equals("door2"))
+        {
+            Debug.Log("hit");
+            SceneManager.LoadScene(0);
         }
     }
 
