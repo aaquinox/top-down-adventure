@@ -75,6 +75,13 @@ public class PlayerController : MonoBehaviour
             Debug.Log("hit");
             SceneManager.LoadScene(0);
         }
+
+        if (collision.gameObject.tag.Equals("ed") && hasKey == true)
+        {
+            Debug.Log("hit");
+
+        }
+
     }
 
 }
