@@ -62,13 +62,23 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(1); //access SceneManager class for Loadscene function
         }
 
-        if (collision.gameObject.tag.Equals("key"))
+        if (collision.gameObject.tag.Equals("key1"))
         {
             Debug.Log("obtained key");
-            key.SetActive(false);  //key disappears
+            //key.SetActive(false);  //key disappears
 
-            hasKey = true;
+            hasKey1 = true;
         }
+
+        if (collision.gameObject.tag.Equals("key2"))
+
+        {
+            Debug.Log("obtained key");
+            //key.SetActive(false);  //key disappears
+
+            hasKey2 = true;
+        }
+
 
         if (collision.gameObject.tag.Equals("door2"))
         {
@@ -76,10 +86,17 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(0);
         }
 
-        if (collision.gameObject.tag.Equals("ed") && hasKey == true)
+        if (collision.gameObject.tag.Equals("end") && hasKey1 == true)
         {
             Debug.Log("hit");
+            SceneManager.LoadScene(2);
+        }
 
+
+        if (collision.gameObject.tag.Equals("end") && hasKey2 == true)
+        {
+            Debug.Log("hit");
+            SceneManager.LoadScene(3);
         }
 
     }
