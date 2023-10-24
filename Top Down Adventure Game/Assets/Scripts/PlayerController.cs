@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement; //importing SceneManagement library
 public class PlayerController : MonoBehaviour
 {
     public float speed = 0.5f;
-    public bool hasKey = false;
+    public bool hasKey1 = false;
+    public bool hasKey2 = false;
     public GameObject key;
 
     public static PlayerController instance; //creating an object of the class to be findable 
